@@ -67,6 +67,9 @@ SELECT * FROM sightings
 
 INSERT INTO rangers (name, region)  VALUES('Derek Fox','Coastal Plains')
 
+-- DELETE FROM rangers
+-- WHERE ranger_id = 4;
+
 -- Problem Solve-1 end---
 
 
@@ -83,3 +86,13 @@ SELECT * FROM sightings
 WHERE location LIKE '%Pass';
 
 -- Problem Solve-3 end---
+
+-- Problem Solve-4 start---
+
+SELECT name,count(*) AS total_sightings FROM sightings
+JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+GROUP BY name
+ORDER BY name 
+
+
+-- Problem Solve-4 end---
