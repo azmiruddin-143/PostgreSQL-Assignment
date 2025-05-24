@@ -7,7 +7,6 @@ CREATE TABLE rangers (
     region VARCHAR(60)
 );
 
- drop Table rangers
 
 INSERT INTO rangers (name, region)
 VALUES
@@ -26,6 +25,14 @@ CREATE TABLE species (
     discovery_date DATE,
     conservation_status VARCHAR(30)
 );
+
+INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status)
+VALUES
+('Snow Leopard', 'Panthera uncia', '1775-01-01', 'Endangered'),
+('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
+('Red Panda', 'Ailurus fulgens', '1825-01-01', 'Vulnerable'),
+('Asiatic Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered');
+
 
 -- species table end--
 
@@ -50,4 +57,14 @@ VALUES
 
 -- sightings table end--
 
--- Problem Solve-1---
+-- Problem Solve-1 start---
+
+SELECT * FROM rangers
+
+SELECT * FROM species
+
+SELECT * FROM sightings
+
+INSERT INTO rangers (name, region)  VALUES('Derek Fox','Coastal Plains')
+
+-- Problem Solve-1 end---
