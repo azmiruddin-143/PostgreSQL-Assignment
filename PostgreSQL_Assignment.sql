@@ -131,3 +131,24 @@ WHERE discovery_date < '1800-01-01'
 
 
 -- Problem Solve-7 end---
+
+-- Problem Solve-8  start---
+
+
+ SELECT sighting_id,
+ CASE 
+    WHEN extract(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN extract(HOUR FROM sighting_time) BETWEEN 12 AND 17  THEN 'Afternoon'
+    WHEN extract(HOUR FROM sighting_time) > 17 THEN 'Evening'
+    end AS time_of_day
+    FROM sightings
+
+
+-- Problem Solve-8 end---
+
+
+-- Problem Solve-9  start---
+  DELETE  FROM rangers
+  WHERE ranger_id NOT IN (SELECT DISTINCT ranger_id FROM sightings)
+  
+-- Problem Solve-9 end---
