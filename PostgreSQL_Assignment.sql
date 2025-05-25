@@ -150,5 +150,4 @@ WHERE discovery_date < '1800-01-01'
 -- Problem Solve-9  start---
   DELETE  FROM rangers
   WHERE ranger_id NOT IN (SELECT DISTINCT ranger_id FROM sightings)
-  
 -- Problem Solve-9 end---
