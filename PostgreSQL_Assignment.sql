@@ -105,3 +105,29 @@ Left JOIN sightings ON species.species_id = sightings.species_id
 WHERE sightings.species_id IS NULL
 
 -- Problem Solve-5 end---
+
+SELECT * FROM rangers
+
+SELECT * FROM sightings
+
+SELECT * FROM species
+
+-- Problem Solve-6 start---
+
+SELECT common_name,sighting_time, name    FROM  sightings
+JOIN species ON sightings.species_id = species.species_id
+JOIN rangers ON sightings.ranger_id = rangers.ranger_id
+ORDER BY sighting_time DESC
+LIMIT 2
+
+-- Problem Solve-6 end---
+
+
+-- Problem Solve-7  start---
+
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01'
+
+
+-- Problem Solve-7 end---
