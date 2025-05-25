@@ -96,3 +96,12 @@ ORDER BY name
 
 
 -- Problem Solve-4 end---
+
+
+-- Problem Solve-5 start---
+
+SELECT species.common_name FROM species 
+Left JOIN sightings ON species.species_id = sightings.species_id
+WHERE sightings.species_id IS NULL
+
+-- Problem Solve-5 end---
