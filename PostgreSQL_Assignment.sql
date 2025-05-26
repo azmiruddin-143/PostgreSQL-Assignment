@@ -83,7 +83,7 @@ SELECT count(DISTINCT species_id) AS unique_species_count FROM sightings
 -- Problem Solve-3 start---
 
 SELECT * FROM sightings
-WHERE location LIKE '%Pass';
+WHERE location ILIKE '%Pass%';
 
 -- Problem Solve-3 end---
 
@@ -128,6 +128,7 @@ LIMIT 2
 UPDATE species
 SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01'
+
 
 
 -- Problem Solve-7 end---

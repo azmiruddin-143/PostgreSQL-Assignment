@@ -45,6 +45,41 @@ ORDER BY sighting_time DESC
 LIMIT 2 
 ``` 
 
+# 6. How can you modify data using UPDATE statements?
+## উত্তর:
+### UPDATE দিয়ে টেবিলের আগের ডেটা পরিবর্তন এবং modify করা যায়। যে টেবিলের রেকর্ডটা পরিবর্তন করতে চাই , সেটার জন্য WHERE ব্যবহার করতে হবে।
+## উদাহরণ:
+ 
+```sql
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01'
+``` 
+
+# 7. Explain the GROUP BY clause and its role in aggregation operations.
+## উত্তর:
+### GROUP BY ব্যবহার করে একই রকম ডেটাগুলোকে একটা গ্রুপে সহজেই আনতে পারি। তারপর সেই গ্রুপের উপর এগ্রিগেট ফাংশন ব্যবহার করে যেমন  COUNT, SUM, AVG এই  বিভিন্ন ধরনের হিসাব করা যায়।
+## উদাহরণ:
+ 
+```sql
+SELECT ranger_id, COUNT(*) AS total_sightings
+FROM sightings
+GROUP BY ranger_id;
+``` 
+
+# 8. How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?
+## উত্তর:
+### COUNT() টেবিলের মধ্যে সব মিলিয়ে কয়টা  রেকর্ড আছে গুনে দেয়। SUM() কোনো কলামের যেটা সংখ্যা হিসেবে হয় তা সব মান যোগ করে দেয়। AVG() কলামের সব সংখ্যা যোগফলকে সংখ্যা গুলোর পরিমাণ দিয়ে ভাগ করে গড় বের করে।
+## উদাহরণ:
+ 
+```sql
+SELECT COUNT(*) FROM sightings;
+
+SELECT SUM(price) FROM products;
+
+SELECT AVG(score) FROM tests;
+
+``` 
 
 
 
