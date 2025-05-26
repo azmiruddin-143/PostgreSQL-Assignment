@@ -57,25 +57,25 @@ VALUES
 
 -- sightings table end--
 
--- Problem Solve-1 start---
-
 SELECT * FROM rangers
 
 SELECT * FROM species
 
 SELECT * FROM sightings
 
-INSERT INTO rangers (name, region)  VALUES('Derek Fox','Coastal Plains')
+-- Problem Solve-1 start---
 
--- DELETE FROM rangers
--- WHERE ranger_id = 4;
+
+INSERT INTO rangers (name, region)  VALUES('Derek Fox','Coastal Plains');
+
 
 -- Problem Solve-1 end---
 
 
+
 -- Problem Solve-2 start---
 
-SELECT count(DISTINCT species_id) AS unique_species_count FROM sightings
+SELECT count(DISTINCT species_id) AS unique_species_count FROM sightings;
 
 -- Problem Solve-2 end---
 
@@ -94,7 +94,6 @@ JOIN rangers ON sightings.ranger_id = rangers.ranger_id
 GROUP BY name
 ORDER BY name 
 
-
 -- Problem Solve-4 end---
 
 
@@ -106,11 +105,6 @@ WHERE sightings.species_id IS NULL
 
 -- Problem Solve-5 end---
 
-SELECT * FROM rangers
-
-SELECT * FROM sightings
-
-SELECT * FROM species
 
 -- Problem Solve-6 start---
 
@@ -130,7 +124,6 @@ SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01'
 
 
-
 -- Problem Solve-7 end---
 
 -- Problem Solve-8  start---
@@ -147,8 +140,12 @@ WHERE discovery_date < '1800-01-01'
 
 -- Problem Solve-8 end---
 
-
 -- Problem Solve-9  start---
+
   DELETE  FROM rangers
   WHERE ranger_id NOT IN (SELECT DISTINCT ranger_id FROM sightings)
+
 -- Problem Solve-9 end---
+
+
+-- All Problem Solve COmeple--
